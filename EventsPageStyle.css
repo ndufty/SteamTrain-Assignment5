@@ -1,0 +1,10 @@
+body {
+    background-image: url(Pictures/Steam%20with%20Friends%20Events%20Square.png);
+    background-position: top;
+}
+
+title {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+}
