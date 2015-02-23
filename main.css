@@ -9,15 +9,15 @@ h1 {
 }
 
 p1 { 
-	position: relative;
+	position: absolute;
 	left: 140px;
 	top: 80px;
 	color: white;
 }
 
 p2 { 
-	position: relative;
-	left: 480px;
+	position: absolute;
+	right: 480px;
 	top: 80px;
 	color: white;
 }
@@ -27,4 +27,19 @@ rect{
 	stroke:black;
 	stroke-width:5;
 	opacity:"0.5"
+    
+
+}
+
+.titles {
+    font-size: 20px;
+}
+
+.insideBoxText{
+    font-size: 20px;
+}
+
+text {
+    font-size: 20px;
+    color: white;
 }
