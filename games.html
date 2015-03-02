@@ -31,10 +31,22 @@ $(document).ready(function(){
 </script>
 <script>
 function makeGroup(){
-	var org = document.getElementById('curFriends');
-	var cpy = document.getElementById('groups');
+	var frn = document.getElementById('curFriends');
+	var grp = document.getElementById('groups');
 
-	cpy.innerHTML = cpy.innerHTML + org.textContent;
+	var newhead = document.createElement("h3");
+	newhead.appendChild(document.createTextNode("Group 1"));
+	var newul = document.createElement("ul");
+
+
+	grp.appendChild(newhead);
+	grp.appendChild(newul);
+
+	var str = frn.textContent;
+	var newli = document.createElement("li");
+	newul.appendChild(newli);
+	newli.appendChild(document.createTextNode(str));
+
 
 }
 </script>
@@ -59,15 +71,9 @@ $(function() {
 
 	<div class="column">
 		<h1>Groups</h1>
-		<div class = "row">
-		<a href="#hide1" class="hide" id="hide1">Expand</a>
-		<a href="#show1" class="show" id="show1">Collapse</a>
-		<div class="list">
-		<ul>
-		<li>Item 1</li>
-		<li>Item 2</li>
-		</ul>
-		</div>
+		<div id ="groups" class="box">
+
+
 		</div>
 	</div>
 
