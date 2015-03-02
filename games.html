@@ -1,0 +1,121 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+var num = 0;
+$(document).ready(function(){
+	$(document).on("click", "#friends .friend", function(){
+		var pic = $(this).children("img");
+		var attrID = pic.first().attr("id");
+		document.getElementById(attrID).src="minus.gif";
+		$(this).appendTo("#curFriends");
+		if(num == 0){
+			var cur = document.getElementById("gamesList");
+			cur.style.display="block";
+		}
+		num = num + 1;
+
+	});
+	$(document).on("click","#curFriends .friend", function(){
+		var img = $(this).find("img");
+		var attrID = img.first().attr("id");
+		document.getElementById(attrID).src="plus.gif";
+		$(this).appendTo("#friends");
+		if(num == 1){
+			var cur = document.getElementById("gamesList");
+			cur.style.display="none";
+		}
+		num = num - 1;
+	});
+});
+</script>
+<script>
+function makeGroup(){
+	var org = document.getElementById('curFriends');
+	var cpy = document.getElementById('groups');
+
+	cpy.innerHTML = cpy.innerHTML + org.textContent;
+
+}
+</script>
+<script>
+$(function() {
+
+
+    var rows = $('tr');
+
+    rows.on('click', function(e) {
+        var row = $(this);
+        rows.removeClass('highlight');
+        row.addClass('highlight');
+    });
+});
+</script>
+</head>
+
+<body>
+<div class="container">
+	<link rel="stylesheet" type="text/css" href="gamesStyle.css">
+
+	<div class="column">
+		<h1>Groups</h1>
+		<div class = "row">
+		<a href="#hide1" class="hide" id="hide1">Expand</a>
+		<a href="#show1" class="show" id="show1">Collapse</a>
+		<div class="list">
+		<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		</ul>
+		</div>
+		</div>
+	</div>
+
+	<div class="column">
+		<h1>Friends</h1>
+		<div id="friends" class="box">
+			<div class="friend">
+				<img src="plus.gif" id="img1" class="plus">
+				Yoloswag
+			</div>
+			<div class="friend">
+				<img src="plus.gif" id="img2" class="plus">
+				thatguy
+			</div>
+			<div class="friend">
+				<img src="plus.gif" id="img3" class="plus">
+				newbpwner
+			</div>
+		</div>
+
+	</div>
+
+	<div  class="column">
+		<h1>Current Friends</h1>
+		<div id="curFriends" class="box">
+
+		</div>
+		<button onclick="makeGroup()">
+			Make Group
+		</button>
+	</div>
+
+	<div class="column">
+		<h1>Games</h1>
+		<div id="games" class="box">
+			<table id="gamesList" class="hidden" border="0">
+				<tr>
+					<th>Guns of Icarus</th>
+				</tr>
+				<tr>
+					<th>Borderlands 2</th>
+				</tr>
+			</table>
+		</div>
+		<button>
+			Create event
+		</button>
+	</div>
+</div>
+</body>
+</html>

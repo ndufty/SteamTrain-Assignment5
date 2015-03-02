@@ -1,0 +1,20 @@
+body { 
+	background:	#525252;
+	font-family: arial;
+	color: white;
+	padding-top: 20%;
+	text-align: center;
+}
+
+
+
+input[type=submit]{
+	display block;
+	background: rgb(4,33,60);
+	color: #efefef;
+	border: none;
+	padding: 10px 15px;
+	-moz-border-radius 0px;
+	border-radius: 0px;
+	cursor: pointer;
+}
